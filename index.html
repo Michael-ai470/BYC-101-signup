@@ -40,33 +40,57 @@
   .nav-links a{font-weight:600;padding:8px 12px;border-radius:10px;transition:all .18s}
   .nav-links a:hover{background:var(--soft)}
   .cta-portfolio{border:2px solid var(--mint);color:var(--midnight);padding:8px 14px;border-radius:10px;font-weight:700}
-  .nav-toggle{display:none;background:transparent;border:none;font-size:20px}
+  .nav-toggle{display:none;background:transparent;border:none;font-size:20px;cursor:pointer;color:var(--midnight)}
+  #mobileMenu{display:none;padding:12px 20px !important;border-top:1px solid rgba(10,17,40,0.03) !important;background:rgba(255,255,255,0.6) !important;backdrop-filter:blur(6px) !important}
+  #mobileMenu.open{display:block !important}
+  #mobileMenu > div{display:flex;flex-direction:column;gap:8px;max-width:1100px;margin:0 auto;padding-bottom:12px}
+  #mobileMenu a{padding:10px 12px;border-radius:8px;transition:all .2s;font-weight:500}
+  #mobileMenu a:hover{background:rgba(78,205,196,0.1)}
+  #mobileMenu .cta-portfolio{width:100%}
+  
+  @media (max-width:980px){
+    .nav-toggle{display:inline-flex !important}
+    .nav-links{display:none}
+  }
 
   /* Hero */
-  .hero{background:linear-gradient(135deg,var(--midnight), #1b2742);color:white;border-radius:12px;padding:40px;display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin:22px 0;box-shadow:var(--shadow)}
-  .hero h1{font-size:clamp(24px,3vw,36px);margin:0 0 12px;line-height:1.05}
-  .hero p.lead{opacity:0.98;margin:0 0 18px;font-size:15px;max-width:60ch}
-  .buttons{display:flex;gap:12px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:white;padding:12px 18px;border-radius:12px;font-weight:700;border:none;cursor:pointer;box-shadow:0 8px 18px rgba(255,107,107,0.18);transition:transform .18s ease,box-shadow .18s}
+  .hero{background:linear-gradient(135deg,var(--midnight), #1b2742);color:white;border-radius:16px;padding:48px;display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:center;margin:22px 0;box-shadow:0 20px 50px rgba(10,17,40,0.25)}
+  .hero h1{font-size:clamp(24px,3vw,40px);margin:0 0 14px;line-height:1.1;font-weight:800}
+  .hero p.lead{opacity:0.95;margin:0 0 24px;font-size:16px;max-width:60ch;line-height:1.6}
+  .buttons{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:white;padding:12px 18px;border-radius:12px;font-weight:700;border:none;cursor:pointer;box-shadow:0 8px 18px rgba(255,107,107,0.18);transition:transform .18s ease,box-shadow .18s ease;}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(255,107,107,0.28)}
+  .btn:active{transform:translateY(0)}
+  .btn.primary-cta{background:linear-gradient(135deg, #FF6B6B, #FF5252);box-shadow:0 12px 28px rgba(255,107,107,0.32)}
+  .btn.primary-cta:hover{box-shadow:0 16px 36px rgba(255,107,107,0.4)}
   .btn.secondary{color:white;border:2px solid rgba(255,255,255,0.12)}
+  .btn.secondary:hover{background:rgba(255,255,255,0.08); color: var(--coral);}
   .btn:focus{outline:3px solid rgba(78,205,196,0.16);outline-offset:3px}
-  .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));padding:18px;border-radius:10px}
-  .hero-card h4{margin:0 0 10px;font-size:16px}
+  .hero-card{background:linear-gradient(135deg, rgba(78,205,196,0.12), rgba(255,107,107,0.08));padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px)}
+  .hero-card h4{margin:0 0 14px;font-size:16px;font-weight:700;color:rgba(255,255,255,0.95)}
   .features{display:flex;flex-direction:column;gap:10px}
-  .feature{display:flex;align-items:flex-start;gap:12px;padding:6px;border-radius:8px}
-  .feature i{color:var(--mint);font-size:18px;min-width:22px}
+  .feature{display:flex;align-items:flex-start;gap:12px;padding:10px;border-radius:8px;transition:all .2s}
+  .feature:hover{background:rgba(255,255,255,0.05)}
+  .feature i{color:var(--mint);font-size:20px;min-width:24px}
 
   /* Sections */
-  section{padding:28px 0}
-  .card{border-radius:12px;padding:18px;box-shadow:0 8px 24px rgba(10,17,40,0.06)}
-  h2{color:var(--midnight);margin:0 0 12px}
-  p{margin:0 0 12px}
+  section{padding:32px 0}
+  .card{border-radius:14px;padding:28px;box-shadow:0 8px 24px rgba(10,17,40,0.06);border:1px solid rgba(10,17,40,0.04)}
+  h2{color:var(--midnight);margin:0 0 18px;font-size:28px;font-weight:700}
+  p{margin:0 0 14px;line-height:1.6}
+  section#why .card{background:linear-gradient(135deg, rgba(78,205,196,0.06), rgba(255,107,107,0.02));border:1px solid rgba(78,205,196,0.15)}
+  section#why h2::before{content:'';display:inline-block;width:4px;height:24px;background:linear-gradient(180deg, var(--coral), var(--mint));border-radius:2px;margin-right:12px}
 
   /* Grid & benefits */
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-  .benefit{display:flex;gap:12px;align-items:flex-start}
-  .benefit i{color:var(--coral);font-size:18px;margin-top:4px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .grid .card{background:white}
+  .grid .card:first-child{border-left:4px solid var(--coral)}
+  .grid .card:last-child{border-left:4px solid var(--mint)}
+  .benefit{display:flex;gap:14px;align-items:flex-start;padding:12px;border-radius:8px;transition:all .2s}
+  .benefit:hover{background:rgba(78,205,196,0.04)}
+  .benefit i{color:var(--coral);font-size:20px;margin-top:3px;flex-shrink:0}
   .clean{padding-left:18px;margin:0}
+  .clean li{margin-bottom:10px}
 
   /* Author */
   .author{display:flex;gap:18px;align-items:center}
@@ -221,21 +245,163 @@
     pointer-events: none; /* Ensure only button captures click */
     }
 
+  /* Challenge Section Styles */
+  .challenge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
+  .challenge-card{background:linear-gradient(135deg, rgba(78,205,196,0.05), rgba(255,107,107,0.02));border:1px solid rgba(78,205,196,0.1);border-radius:12px;padding:20px;box-shadow:0 4px 12px rgba(10,17,40,0.04)}
+  .challenge-header{width:48px;height:48px;background:var(--sand);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:12px}
+  .challenge-card h3{color:var(--midnight);margin:0 0 6px;font-size:18px}
+  .challenge-card p{color:var(--text-weak);font-size:14px;margin:0 0 14px}
+  .challenge-list{padding-left:18px;margin:0}
+  .challenge-list li{margin-bottom:8px;color:var(--slate);display:flex;align-items:flex-start;gap:8px}
+  .challenge-list i{min-width:16px;margin-top:2px;flex-shrink:0}
+  code{background:#FFE0E0;color:var(--coral);padding:4px 8px;border-radius:4px;font-weight:700;font-family:monospace}
+  
+  /* Who List Styling */
+  .who-list{padding-left:0;margin:0;list-style:none}
+  .who-list li{margin-bottom:14px;color:var(--slate);display:flex;align-items:flex-start;gap:14px;padding:12px;border-radius:8px;transition:all .2s}
+  .who-list li:hover{background:rgba(255,107,107,0.04)}
+  .who-list i{color:var(--coral);font-size:18px;margin-top:2px;flex-shrink:0}
+
   /* Animations */
   .fade-up{opacity:0;transform:translateY(14px);transition:all .6s cubic-bezier(.2,.9,.2,1)}
   .in-view{opacity:1;transform:none}
 
   /* Responsive */
   @media (max-width:980px){
-    .hero{grid-template-columns:1fr; text-align:left;padding:28px}
+    .hero{grid-template-columns:1fr; text-align:left;padding:36px}
+    .hero-card{margin-top:20px}
     .grid{grid-template-columns:1fr}
+    .challenge-grid{grid-template-columns:1fr !important}
     .nav-links{display:none}
     .nav-toggle{display:inline-flex}
+    .cta-strip{flex-direction:column;text-align:center}
+    .cta-strip > div:last-child{width:100%}
+    .cta-strip .btn, .cta-strip .ghost{width:100%}
+    .author{flex-direction:column;text-align:center}
+    .photo{margin-bottom:12px}
+    .meta .actions{flex-direction:column;width:100%}
+    .meta .actions a, .meta .actions button{width:100%}
+    h2{font-size:24px}
+    .card{padding:20px}
   }
-  @media (max-width:520px){
-    .hero h1{font-size:22px}
-    .photo{width:110px;height:110px}
+  
+  @media (max-width:768px){
     .wrap{padding:16px}
+    .hero{padding:28px}
+    .hero h1{font-size:clamp(22px,5vw,32px)}
+    .hero p.lead{font-size:15px;margin:0 0 18px}
+    .buttons{gap:10px}
+    .btn{padding:10px 16px;font-size:14px}
+    .hero-card{padding:18px}
+    .hero-card h4{font-size:14px;margin:0 0 12px}
+    .feature{padding:8px}
+    .feature i{font-size:18px}
+    h2{font-size:22px;margin:0 0 14px}
+    p{margin:0 0 12px}
+    section{padding:24px 0}
+    .card{padding:16px;border-radius:12px}
+    .benefit{padding:10px;gap:12px}
+    .clean li{margin-bottom:8px}
+    .challenge-grid{grid-template-columns:1fr !important}
+    .challenge-card{padding:16px}
+    .challenge-header{width:40px;height:40px;font-size:20px}
+    .challenge-card h3{font-size:16px}
+    .challenge-card p{font-size:13px}
+    .who-list li{padding:10px;gap:12px;margin-bottom:12px}
+    .who-list i{font-size:16px}
+    .cta-strip{padding:14px;gap:10px}
+    .cta-strip > div:first-child{font-size:14px}
+  }
+  
+  @media (max-width:640px){
+    .wrap{padding:14px}
+    .nav{padding:10px 14px}
+    .brand h3{font-size:16px}
+    .hero{padding:24px;gap:24px;margin:18px 0;border-radius:12px}
+    .hero h1{font-size:clamp(20px,6vw,28px);margin:0 0 12px;line-height:1.2}
+    .hero p.lead{font-size:14px;margin:0 0 16px}
+    .buttons{gap:8px;flex-direction:column}
+    .btn{padding:10px 14px;font-size:13px;width:100%}
+    .btn span{display:inline}
+    .hero-card{padding:16px}
+    .hero-card h4{font-size:13px;margin:0 0 10px}
+    .feature{gap:10px;padding:6px}
+    .feature i{font-size:16px}
+    h2{font-size:20px;margin:0 0 12px}
+    p{font-size:14px;margin:0 0 12px}
+    section{padding:20px 0}
+    .card{padding:14px;border-radius:10px}
+    .grid{gap:14px}
+    .benefit{padding:8px;gap:10px;font-size:13px}
+    .benefit i{font-size:18px;margin-top:2px}
+    .clean{padding-left:16px}
+    .clean li{margin-bottom:6px;font-size:13px}
+    .challenge-grid{grid-template-columns:1fr !important}
+    .challenge-card{padding:14px}
+    .challenge-header{width:36px;height:36px;font-size:18px;margin-bottom:10px}
+    .challenge-card h3{font-size:15px;margin:0 0 4px}
+    .challenge-card p{font-size:12px;margin:0 0 12px}
+    .challenge-list li{margin-bottom:6px;gap:6px;font-size:13px}
+    .challenge-list i{font-size:14px}
+    .who-list{padding-left:0}
+    .who-list li{padding:8px;gap:10px;margin-bottom:10px;font-size:13px}
+    .who-list i{font-size:15px;min-width:14px}
+    .author{padding:0}
+    .photo{width:100px;height:100px}
+    .meta h3{font-size:16px}
+    .meta p{font-size:13px;margin-bottom:8px}
+    .cta-strip{padding:12px;gap:8px;border-radius:10px}
+    .cta-strip > div:first-child{font-size:13px}
+    .cta-strip .btn, .cta-strip .ghost{padding:8px 12px;font-size:13px}
+    .nav-links{flex-direction:column;width:100%}
+  }
+  
+  @media (max-width:480px){
+    .wrap{padding:12px}
+    .nav{padding:8px 12px;gap:8px}
+    .brand h3{font-size:15px}
+    .nav-toggle{font-size:18px}
+    .hero{padding:20px;gap:16px;margin:14px 0}
+    .hero h1{font-size:clamp(18px,5vw,26px);margin:0 0 10px;line-height:1.25}
+    .hero p.lead{font-size:13px;margin:0 0 14px;line-height:1.5}
+    .buttons{gap:6px}
+    .btn{padding:9px 12px;font-size:12px;border-radius:10px}
+    .hero-card{padding:14px;border-radius:10px}
+    .hero-card h4{font-size:12px;margin:0 0 8px}
+    .feature{gap:8px;padding:4px}
+    .feature i{font-size:15px;min-width:18px}
+    .feature div{font-size:12px}
+    h2{font-size:18px;margin:0 0 10px}
+    h2::before{width:3px;height:20px;margin-right:8px}
+    p{font-size:13px;margin:0 0 10px}
+    section{padding:16px 0}
+    .card{padding:12px;border-radius:10px}
+    .grid{gap:12px}
+    .benefit{padding:6px;gap:8px;font-size:12px}
+    .benefit i{font-size:16px}
+    .clean{padding-left:14px}
+    .clean li{margin-bottom:4px;font-size:12px}
+    .challenge-grid{grid-template-columns:1fr !important;gap:12px;margin:16px 0}
+    .challenge-card{padding:12px}
+    .challenge-header{width:32px;height:32px;font-size:16px;margin-bottom:8px}
+    .challenge-card h3{font-size:14px;margin:0 0 4px}
+    .challenge-card p{font-size:11px;margin:0 0 10px}
+    .challenge-list li{margin-bottom:4px;gap:6px;font-size:12px}
+    .challenge-list i{font-size:12px;min-width:12px}
+    .who-list li{padding:6px;gap:8px;margin-bottom:8px;font-size:12px}
+    .who-list i{font-size:14px;min-width:12px}
+    .photo{width:80px;height:80px}
+    .meta h3{font-size:14px;margin:0 0 4px}
+    .meta p{font-size:12px;margin:0;margin-bottom:6px}
+    .cta-strip{padding:10px;gap:6px;border-radius:10px;flex-direction:column}
+    .cta-strip > div:first-child{font-size:12px;font-weight:600}
+    .cta-strip .btn, .cta-strip .ghost{padding:8px 10px;font-size:12px;width:100%}
+    footer{padding:20px 0;margin-top:20px}
+    .footer-grid{flex-direction:column;text-align:center;gap:10px}
+    .socials{justify-content:center}
+    .small{font-size:11px}
+    .modal-card{padding:16px}
+    .modal-card h3{font-size:16px}
   }
 </style>
 
@@ -262,20 +428,22 @@
     <nav class="nav-links" aria-label="Primary navigation">
       <a href="#why">Why</a>
       <a href="#learn">Learn</a>
+      <a href="#challenge">Challenge</a>
       <a href="#author">Author</a>
-      <a class="cta-portfolio" href="https://ajy-kingofficial.vercel.app" target="_blank" rel="noopener">Visit Portfolio</a>
+      <a class="cta-portfolio" href="https://selar.com/beyond-code-101" target="_blank" rel="noopener"><i class="fa-solid fa-shopping-bag" aria-hidden="true"></i> Buy Now</a>
     </nav>
 
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu"><i class="fa-solid fa-bars"></i></button>
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobileMenu" style="display:none;padding:12px 20px;border-top:1px solid rgba(10,17,40,0.03);background:rgba(255,255,255,0.6);backdrop-filter:blur(6px)">
-    <div style="display:flex;flex-direction:column;gap:8px;max-width:1100px;margin:0 auto;padding-bottom:12px">
+  <div id="mobileMenu">
+    <div>
       <a href="#why">Why</a>
       <a href="#learn">Learn</a>
+      <a href="#challenge">Challenge</a>
       <a href="#author">Author</a>
-      <a class="cta-portfolio" href="https://ajy-kingofficial.vercel.app" target="_blank" rel="noopener">Visit Portfolio</a>
+      <a class="cta-portfolio" href="https://selar.com/beyond-code-101" target="_blank" rel="noopener"><i class="fa-solid fa-shopping-bag" aria-hidden="true"></i> Buy Now</a>
     </div>
   </div>
 </header>
@@ -288,6 +456,7 @@
       <p class="lead">Your no-fluff blueprint to land your first paid client — in just <strong>7 days</strong>. Practical steps, message scripts, and the mindset to win.</p>
 
       <div class="buttons">
+        <a class="btn primary-cta" href="https://selar.com/beyond-code-101" target="_blank" rel="noopener"><i class="fa-solid fa-shopping-cart" aria-hidden="true"></i><span>Buy Now</span></a>
         <button class="btn" id="openModalBtn" aria-haspopup="dialog"><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i><span>Get Free Chapter</span></button>
         <a class="btn secondary" href="#learn"><i class="fa-solid fa-book-open-reader" aria-hidden="true"></i><span>Preview Contents</span></a>
       </div>
@@ -335,23 +504,86 @@
         </ul>
 
         <div style="margin-top:18px">
-          <button class="btn" id="joinListBtn"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Join early list</button>
+          <button class="btn" id="joinListBtn"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Join BYC101 Visionaries</button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- WHO FOR -->
-  <section>
+  <section class="who-section">
     <div class="card fade-up">
       <h2>Who this is for</h2>
-      <ul>
-        <li>Creatives looking to upscale their game in a highly competitive space, and position himself strategically.</li>
-        <li>Students or career changers wanting real-world client experience.</li>
-        <li>Developers, designers, Photographers and marketers ready to lead in their space.</li>
-        <li>Anyone tired of vague advice and countless youtube videos and ready for a proven plan.</li>
-        <li>Beginner developers and creatives ready to land a paid project.</li>
+      <ul class="who-list">
+        <li><i class="fa-solid fa-star" aria-hidden="true"></i> Creatives looking to upscale their game in a highly competitive space, and position themselves strategically.</li>
+        <li><i class="fa-solid fa-star" aria-hidden="true"></i> Students or career changers wanting real-world client experience.</li>
+        <li><i class="fa-solid fa-star" aria-hidden="true"></i> Developers, designers, photographers and marketers ready to lead in their space.</li>
+        <li><i class="fa-solid fa-star" aria-hidden="true"></i> Anyone tired of vague advice and countless YouTube videos and ready for a proven plan.</li>
+        <li><i class="fa-solid fa-star" aria-hidden="true"></i> Beginner developers and creatives ready to land a paid project.</li>
       </ul>
+    </div>
+  </section>
+
+  <!-- AUTHOR -->
+  <section id="challenge">
+    <div class="card fade-up">
+      <h2><i class="fa-solid fa-fire" style="color:var(--coral);margin-right:8px" aria-hidden="true"></i>BYC101 30-Day Sales Challenge</h2>
+      <p style="font-size:16px;color:var(--slate);margin-bottom:20px"><strong>Ready to turn this book into income?</strong> Join our exclusive affiliate sales challenge and earn 30% commission on every sale, plus amazing bonuses and prizes.</p>
+      
+      <div class="challenge-grid">
+        <div class="challenge-card">
+          <div class="challenge-header"><i class="fa-solid fa-coins" style="color:var(--coral)" aria-hidden="true"></i></div>
+          <h3>Prize Pool</h3>
+          <p>₦35,000 + Extra Sales Bonuses</p>
+          <ul class="clean challenge-list">
+            <li><i class="fa-solid fa-medal" style="color:var(--coral)" aria-hidden="true"></i> <strong>1st Place:</strong> ₦20,000</li>
+            <li><i class="fa-solid fa-medal" style="color:var(--coral)" aria-hidden="true"></i> <strong>2nd Place:</strong> ₦10,000</li>
+            <li><i class="fa-solid fa-medal" style="color:var(--coral)" aria-hidden="true"></i> <strong>3rd Place:</strong> ₦5,000</li>
+          </ul>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-header"><i class="fa-solid fa-percent" style="color:var(--mint)" aria-hidden="true"></i></div>
+          <h3>Commission & Bonuses</h3>
+          <p>Get 30% instant commission on every sale</p>
+          <ul class="clean challenge-list">
+            <li><i class="fa-solid fa-star" style="color:var(--mint)" aria-hidden="true"></i> 10 sales: +₦10,000 bonus</li>
+            <li><i class="fa-solid fa-star" style="color:var(--mint)" aria-hidden="true"></i> 30 sales: +₦20,000 bonus</li>
+            <li><i class="fa-solid fa-star" style="color:var(--mint)" aria-hidden="true"></i> 50 sales: +₦35,000 bonus</li>
+          </ul>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-header"><i class="fa-solid fa-gift" style="color:#FFB700" aria-hidden="true"></i></div>
+          <h3>Premium Rewards</h3>
+          <p>Hit higher targets for exclusive gifts</p>
+          <ul class="clean challenge-list">
+            <li><i class="fa-solid fa-phone" style="color:#FFB700" aria-hidden="true"></i> 100 sales: Xiaomi Redmi 15C</li>
+            <li><i class="fa-solid fa-mobile" style="color:#FFB700" aria-hidden="true"></i> 200 sales: Samsung Galaxy Note 20 + Secret Reward</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background:rgba(78,205,196,0.06);border-left:4px solid var(--mint);padding:18px;border-radius:8px;margin-top:20px">
+        <h4 style="margin:0 0 12px;color:var(--mint)"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Example: How Much Can You Earn?</h4>
+        <p style="margin:0 0 10px">Make 10 sales × ₦5,000 per copy = 10 × ₦1,500 (30% commission) = <strong>₦15,000 commission</strong> + <strong>₦10,000 bonus</strong> = <strong>₦25,000 total on just 10 sales!</strong></p>
+        <p style="margin:0;color:var(--text-weak);font-size:14px">All promotional materials are provided. You just need to copy, share, and earn.</p>
+      </div>
+
+      <div style="background:rgba(255,107,107,0.06);border-left:4px solid var(--coral);padding:18px;border-radius:8px;margin-top:16px">
+        <h4 style="margin:0 0 12px;color:var(--coral)"><i class="fa-solid fa-handshake" aria-hidden="true"></i> How to Get Started</h4>
+        <ul class="clean challenge-list">
+          <li><i class="fa-solid fa-circle-1" style="color:var(--coral)" aria-hidden="true"></i> <strong>Make 1 purchase</strong> of BYC101 E-book</li>
+          <li><i class="fa-solid fa-circle-2" style="color:var(--coral)" aria-hidden="true"></i> <strong>Pay ₦3,000</strong> Selar affiliate registration fee (or use coupon <code style="background:#FFE0E0;padding:4px 8px;border-radius:4px;font-weight:700">BF50</code> for 50% OFF = ₦1,500!)</li>
+          <li><i class="fa-solid fa-circle-3" style="color:var(--coral)" aria-hidden="true"></i> <strong>Comment "BYC101"</strong> and I'll send you step-by-step onboarding</li>
+          <li><i class="fa-solid fa-circle-check" style="color:var(--coral)" aria-hidden="true"></i> <strong>Start selling</strong> with materials I provide</li>
+        </ul>
+      </div>
+
+      <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap">
+        <a class="btn" href="https://selar.com/beyond-code-101" target="_blank" rel="noopener"><i class="fa-solid fa-rocket" aria-hidden="true"></i> Join the Challenge</a>
+        <a class="btn secondary" href="https://www.instagram.com/ajy_kingofficial" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Comment on Instagram</a>
+      </div>
     </div>
   </section>
 
@@ -376,12 +608,12 @@
   <section>
     <div class="cta-strip fade-up">
       <div>
-        <strong>Ready to land your Next client?</strong>
-        <div style="opacity:.95">Get the practical 7-day plan — action steps, scripts, and templates.</div>
+        <strong>Purchased Beyond Code 101?</strong>
+        <div style="opacity:.95">Join our exclusive WhatsApp community for support, updates, and insider tips.</div>
       </div>
-      <div style="display:flex;gap:12px;align-items:center">
-        <button class="btn" id="downloadBtn"><i class="fa-solid fa-file-circle-plus" aria-hidden="true"></i> Download free chapter</button>
-        <a class="ghost" href="https://ajy-kingofficial.vercel.app" target="_blank" rel="noopener" style="color:white;text-decoration:none;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.12)"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> View portfolio</a>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <a class="btn" href="https://chat.whatsapp.com/GgK2B94zqpKAji2eLPuSUr" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Join WhatsApp Group</a>
+        <a class="ghost" href="https://selar.com/beyond-code-101" target="_blank" rel="noopener" style="color:white;text-decoration:none;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.12)"><i class="fa-solid fa-shopping-bag" aria-hidden="true"></i> Buy Now</a>
       </div>
     </div>
   </section>
@@ -459,7 +691,7 @@
   navToggle?.addEventListener('click', ()=>{
     const expanded = navToggle.getAttribute('aria-expanded') === 'true';
     navToggle.setAttribute('aria-expanded', String(!expanded));
-    mobileMenu.style.display = expanded ? 'none' : 'block';
+    mobileMenu.classList.toggle('open');
   });
 
   // Modal logic
